@@ -1,0 +1,26 @@
+ice.med                ! Medium file
+9065150                ! Random seed
+-1                      ! Track approximation (A=1, B1=0, B2=-1, C=2)
+0 0 0                  ! Write info on tracks in freq domain (1st explicit tcks) (2nd ZHS) & time domain (y=1,n=0)
+1 0 1                  ! E-field (Fraunhofer) freq. (1st explicit tcks) (2nd ZHS) and/or time domain (3rd) (y=1,n=0)
+1 1                    ! E-field (Fresnel) freq. (1st entry) and/or time domain (2nd entry) (y=1,n=0)
+0.1                    ! Time bin [ns] for the time domain calculations
+510.                   ! Primary particle energy [MeV]  (not used in beam mode - read from template_beam.inp)
+1                      ! Number of thinning levels including no-thinning
+0. 0.                  ! Emax and Emin
+1                      ! Particle type -1=positron, 0=photon, 1=electron  (not used in beam mode)
+92.4                   ! Maximum depth [g cm^-2]  (1.0 meter of ice rho=0.924 g/cm^-3)
+1                      ! Number of showers
+1                      ! Compton on/off (1/0)
+1                      ! Annhilation on/off (1/0)
+1                      ! Bhabha on/off (1/0)
+1                      ! Moeller on/off (1/0)
+ZZZZ                   ! Suffix for name of files. Freqs. and angle grid follows:
+grid_frequency.inp     ! Input file containing number and frequencies in MHz
+5  0. 0.1 -0.1 0.2 -0.2  ! Number of theta angles and angles as offset from Cherenkov angle (Fraunhofer only)  
+1  0.   ! Number of Phi angles and values of them (Fraunhofer only)
+1       ! Number of antennas (Fresnel only)
+ 0.12  0.12 0.0   ! Position (x,y,z) in g cm^-2 
+ 0.0  0.0  1.0    ! Antenna wire direction assuming a dipole 
+-1.0  0.0  0.0    ! Direction perpendicular to antenna wire direction
+template_beam.inp   ! Enter file containing beam content
