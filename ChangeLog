@@ -1,3 +1,6 @@
+2014-05-07 Matt:
+	* updating runZHS.py to have more specific output. Note, only run one job per area at a time!
+
 2014-04-30 Matt:
 	* Adding runZHS.py which will execute N number of showers.
 
