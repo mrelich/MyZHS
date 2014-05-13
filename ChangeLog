@@ -1,3 +1,6 @@
+2014-05-13 Matt:
+	* adding python script directory. Right now just NParticle distribution.
+
 2014-05-07 Matt:
 	* updating runZHS.py to have more specific output. Note, only run one job per area at a time!
 
