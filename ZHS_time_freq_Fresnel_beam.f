@@ -587,6 +587,7 @@ C
 
       NO0=0
       NRMAX=ZOBS/T0
+      CH_THR=1.0+e_MASS
       BR_THR=CH_THR-e_MASS           ! Kinetic Threshold energy in MeV
       AP=BR_THR
 
