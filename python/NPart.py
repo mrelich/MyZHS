@@ -43,7 +43,8 @@ nEvent = int(argv[2])
 # Open output file to store hists
 #---------------------------------#
 
-outfile = TFile("rootfiles/test.root","RECREATE")
+#outfile = TFile("rootfiles/test.root","RECREATE")
+outfile = TFile("rootfiles/"+directory+"_NPart.root","RECREATE")
 
 #---------------------------------#
 # Setup profiles here
