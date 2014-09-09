@@ -1,3 +1,9 @@
+2014-09-09 Matt:
+	* Adding modified runZHS.py
+	* Updating NPart plot
+	* Adding all plotting scripts
+	* Adding some new python scripts for plotting VP
+
 2014-05-13 Matt:
 	* adding python script directory. Right now just NParticle distribution.
 	* Moving default threshold to 1 MeV
