@@ -19,11 +19,17 @@ import stat
 # User specifications here
 #---------------------------------#
 
-NEvents   = 1 #00
-beamE     = "3e12" # MeV
-outDir    = "beam"+beamE+"MeV/"
+#NEvents   = 100 #00
+NEvents   = 50 #00
+NPrimary  = 1 #5000
+#NPrimary  = 1
+#beamE     = "10e3" #"1e6" # MeV
+beamE     = "100e3" # MeV -- 100 GeV
+#beamE     = "1e6" # MeV
+outDir    = "beam"+beamE+"MeV_"+str(NPrimary)+"Prim_"+str(NEvents)+"NEvt/"
+#outDir    = "testing"+beamE+"MeV/"
 jobOutput = "output_beam"+beamE+".txt"
-radLengths= 0.92 * 40 * 100
+radLengths= 0.92 * 40 * 40
 
 print radLengths
 
@@ -46,13 +52,16 @@ beamName  = "beam_"+beamE+".inp"
 #---------------------------------#
 def beamTemplate(energy):
     out = open(beamName,"w")
-    out.write("1. ")
-    out.write("1 ")
-    out.write(energy+" ")   # particle energy
-    out.write("0. ")              # x-position
-    out.write("0. ")              # y-position
-    out.write("0. ")              # z-position
-    out.write(n())
+    #for i in range(0,1000):
+    #for i in range(0,5000):
+    for i in range(0,NPrimary):
+        out.write("1. ")
+        out.write("1 ")
+        out.write(energy+" ")   # particle energy
+        out.write("0. ")              # x-position
+        out.write("0. ")              # y-position
+        out.write("0. ")              # z-position
+        out.write(n())
     out.close()
     return
 
@@ -70,7 +79,7 @@ def buildTemplate(randNum, outName):
     out.write("0 0 0"+n())
     out.write("1 0 1"+n())
     out.write("1 1"+n())
-    out.write("0.1"+n())
+    out.write("0.01"+n())
     out.write("100000."+n())
     out.write("1"+n())
     out.write("0. 0."+n())
@@ -83,11 +92,13 @@ def buildTemplate(randNum, outName):
     out.write("1"+n())
     out.write(outName+n())
     out.write("grid_frequency.inp"+n())
-    out.write("5 \t0. \t0.1 \t-0.1 \t0.3 \t-0.3"+n())
+    #out.write("7 \t0. \t0.1 \t-0.1 \t0.3 \t-0.3 \t5.0 \t-5.0"+n())
+    #out.write("11 \t0. \t-55.8 \t-45.8 \t-35.8 \t-25.8 \t-15.8 \t-5.8 \t4.2 \t14.2 \t24.2 \t33"+n())
+    out.write("11 \t0. \t0.1 \t0.2 \t0.3 \t0.4 \t0.5 \t0.6 \t0.7 \t0.8 \t0.9 \t1"+n())
     out.write("1 0."+n())
     out.write("1"+n())
     #out.write("0.12  0.12 0.0"+n())
-    out.write("3.696  3.696 0.0"+n())
+    out.write("554.4  0.0 924.0"+n())
     out.write("0.0  0.0  1.0"+n())
     out.write("-1.0  0.0  0.0"+n())
     #out.write("template_beam.inp"+n())

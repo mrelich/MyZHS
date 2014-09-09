@@ -59,9 +59,9 @@ def makeProfile(name, xtitle, ytitle, nbins, xmin, xmax, color, marker):
     prof.SetMarkerStyle(marker)
     return prof
 
-nbins  = 20
+nbins  = 40 #20
 xmin   = 0
-xmax   = 20.
+xmax   = 40. #20.
 xtitle = "Radiation Lengths"
 ytitle = "Number of Particles"
 
